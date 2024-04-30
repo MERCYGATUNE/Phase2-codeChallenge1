@@ -1,14 +1,8 @@
+{
+ "People":
 
-import './App.css';
-import  {useState} from 'react';
-import List from './Components/List';
-
-function App() {
- const [data ,setData] =useState([
-
-  
-  {
-  "id": 1,
+[{
+    "id": 1,
     "name": "Pasta - Agnolotti - Butternut",
     "price": 23,
     "image": "http://dummyimage.com/242x100.png/cc0000/ffffff",
@@ -97,69 +91,7 @@ function App() {
     "price": 43,
     "image": "http://dummyimage.com/170x100.png/5fa2dd/ffffff",
     "quantity": 30
-  }
-
-]);
- 
- 
- function updateList(id,newName ,) {
-  const pudatedList = List.map((List) => {
-    if (id === List.id){
-      return {...List,name : newName ,}
-    }
-    
-  })
-   return (
-     <div>App</div>
-   )
- }
- 
- export default App
-
-
-
-
-// const addItem = (newItem) => {
-//   setData([...data, newItem]);
-// };
-
-// const deleteItem = (id) => {
-//   setData(data.filter(item => item.id !== id));
-// };
-
-// const updateItem = (id, newData) => {
-//   setData(data.map(item => (item.id === id ? { ...item, ...newData } : item)));
-// };
-
-// return (
-//   <div className="App">
-//     <List data={data} deleteItem={deleteItem} updateItem={updateItem} />
-//   </div>
-// );
-// }
-
-// export default App;
-
-// return (
-  // <div className="App">
-   {/* const [data,setData] = useState([]) */}
-   {/* useState( ()=> {
-    fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
-      // setData(data)
-    // })eturn (
-  <div className="App">
-   {/* const [data,setData] = useState([]) */}
-   {/* useState( ()=> {
-    fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
-      // setData(data)
-    })
-    
-   })
-   return console.log('success'); */}
-
-
-
-
-  {/* </div>
-);
-} */}
+  }]
+}
+  
+  
