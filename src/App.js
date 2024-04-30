@@ -102,64 +102,64 @@ function App() {
 ]);
  
  
- function updateList(id,newName ,) {
-  const pudatedList = List.map((List) => {
-    if (id === List.id){
-      return {...List,name : newName ,}
-    }
-    
-  })
-   return (
-     <div>App</div>
-   )
- }
+//  function updateList(id,newName ,) {
+//   const pudatedList = List.map((List) => {
+//     if (id === List.id){
+//       return {...List,name : newName ,}
+//     }
+
+//   })
+//    return (
+//      <div>App</div>
+//    )
+//  }
  
- export default App
+//  export default App
 
 
 
 
-// const addItem = (newItem) => {
-//   setData([...data, newItem]);
-// };
+const addItem = (newItem) => {
+  setData([...data, newItem]);
+};
 
-// const deleteItem = (id) => {
-//   setData(data.filter(item => item.id !== id));
-// };
+const deleteItem = (id) => {
+  setData(data.filter(item => item.id !== id));
+};
 
-// const updateItem = (id, newData) => {
-//   setData(data.map(item => (item.id === id ? { ...item, ...newData } : item)));
-// };
+const updateItem = (id, newData) => {
+  setData(data.map(item => (item.id === id ? { ...item, ...newData } : item)));
+};
 
-// return (
-//   <div className="App">
-//     <List data={data} deleteItem={deleteItem} updateItem={updateItem} />
-//   </div>
-// );
-// }
+return (
+  <div className="App">
+    <List data={data} deleteItem={deleteItem} updateItem={updateItem} />
+  </div>
+);
+}
 
-// export default App;
+export default App;
 
 // return (
   // <div className="App">
-   {/* const [data,setData] = useState([]) */}
-   {/* useState( ()=> {
+   /* const [data,setData] = useState([]) */
+   /* useState( ()=> {
     fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
       // setData(data)
     // })eturn (
   <div className="App">
-   {/* const [data,setData] = useState([]) */}
-   {/* useState( ()=> {
+   {/* const [data,setData] = useState([]) */
+   /* useState( ()=> {
     fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
       // setData(data)
     })
     
    })
-   return console.log('success'); */}
+   return console.log('success'); */
 
 
 
 
-  {/* </div>
+  /* </div>
 );
-} */}
+// } */
