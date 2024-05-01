@@ -80,18 +80,18 @@ function App() {
     }
    ];
    console.log(App)
-   // The current state of the data  list of people
+   // CURRENT STATE OF DATA
    const [data, setData] = useState(initialData);
-   //Created a function to delete a person according to their respective id
+   //FUNCTION TO DELETE PERSON ACCORDING TO ID
    const deletePerson = (id) => {
      setData(data.filter(person => person.id !== id));
    };
-   // Created a function to add a person to the list of people 
+   // FUNCTION TO ADD PERSON TO LIST 
    const addPerson = (newPerson) => {
-     //Details for the new person passed to the function and an id introduced
+     //DETAILS OF NEW PERSON
      setData([...data, { ...newPerson, id: data.length + 1 }]);
    };
-   //Created a function to update details of people on the list using the id and other details
+   //FUNCTION TO UPDATE INFO OF PEOPLE IN LIST
    const updatePerson = (id, updatedInfo) => {
      setData(data.map(person => person.id === id ? { ...person, ...updatedInfo } : person));
    };
