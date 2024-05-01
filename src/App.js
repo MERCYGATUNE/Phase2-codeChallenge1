@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import List from  './Components/List';
-
+import './App.css';
 import React from 'react'
-import ListItem from './Components/ListItem';
+
 
 function App() {
  
@@ -80,27 +80,29 @@ function App() {
     }
    ];
    console.log(App)
-//  CURRENT STATE OF DATA
+   // The current state of the data  list of people
    const [data, setData] = useState(initialData);
-  //  FUNCTION TO ADD ITEMS TO LIST
-   const addListItem = (newListItem) => {
-    setData([...data, {newListItem, id: data.length +1}]);
-  };
-  //  FUNCTION TO DELETE ITEM FROM LIST
-  const deleteListItem = (id) => {
-    setData(data.filter(ListItem => ListItem.id !== id));
-  };
-  // FUNCTION TO UPDATE ITEM IN LIST
-  const updateListItem = (id, newData) => {
-    setData(data.map(ListItem => (ListItem.id === id ? { ...ListItem, ...newData } : ListItem)));
-  };
+   //Created a function to delete a person according to their respective id
+   const deletePerson = (id) => {
+     setData(data.filter(person => person.id !== id));
+   };
+   // Created a function to add a person to the list of people 
+   const addPerson = (newPerson) => {
+     //Details for the new person passed to the function and an id introduced
+     setData([...data, { ...newPerson, id: data.length + 1 }]);
+   };
+   //Created a function to update details of people on the list using the id and other details
+   const updatePerson = (id, updatedInfo) => {
+     setData(data.map(person => person.id === id ? { ...person, ...updatedInfo } : person));
+   };
 return (
     
   <div className="App">
-      <h1>User List</h1>
-      <List data={data} deleteListItem={deleteListItem} updateListItem={updateListItem} />
+      <h1>PEOPLE </h1>
+      
+      <List data={data} deletePerson={deletePerson} updatePerson={updatePerson} />
       <button className="button"
-        onClick={() => addListItem({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
+        onClick={() => addPerson({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
         New User
       </button>
 

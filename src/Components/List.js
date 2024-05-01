@@ -1,12 +1,12 @@
 import React from 'react'
+import ListItem from './Item'
 
-
-function List({data, deleteListItem ,updateListItem}) {
+function List({data, deletePerson ,updatePerson}) {
   return (
     <div>
       <div>
-      {data.map(ListItem => (
-        <ListItem key={ListItem.id} item={ListItem} deleteItem={deleteListItem} updateItem={updateListItem} />
+      {data.map(person => (
+        <ListItem key={person.id} person={person} deletePerson={deletePerson} updatePerson={updatePerson} />
       ))}
     </div>
 
