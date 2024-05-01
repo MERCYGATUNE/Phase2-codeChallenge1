@@ -1,165 +1,115 @@
+import {useState} from 'react';
+import List from  './Components/List';
 
-import './App.css';
-import  {useState} from 'react';
-import List from './Components/List';
+import React from 'react'
+import ListItem from './Components/ListItem';
 
 function App() {
- const [data ,setData] =useState([
-
-  
-  {
-  "id": 1,
-    "name": "Pasta - Agnolotti - Butternut",
-    "price": 23,
-    "image": "http://dummyimage.com/242x100.png/cc0000/ffffff",
-    "quantity": 44
-  }, {
-    "id": 2,
-    "name": "Dc - Sakura Fu",
-    "price": 32,
-    "image": "http://dummyimage.com/231x100.png/cc0000/ffffff",
-    "quantity": 42
-  }, {
-    "id": 3,
-    "name": "Paste - Black Olive",
-    "price": 74,
-    "image": "http://dummyimage.com/130x100.png/ff4444/ffffff",
-    "quantity": 41
-  }, {
-    "id": 4,
-    "name": "Compound - Pear",
-    "price": 58,
-    "image": "http://dummyimage.com/221x100.png/cc0000/ffffff",
-    "quantity": 39
-  }, {
-    "id": 5,
-    "name": "Beer - Upper Canada Lager",
-    "price": 33,
-    "image": "http://dummyimage.com/193x100.png/cc0000/ffffff",
-    "quantity": 41
-  }, {
-    "id": 6,
-    "name": "Vanilla Beans",
-    "price": 70,
-    "image": "http://dummyimage.com/202x100.png/cc0000/ffffff",
-    "quantity": 32
-  }, {
-    "id": 7,
-    "name": "Flour - Corn, Fine",
-    "price": 20,
-    "image": "http://dummyimage.com/150x100.png/cc0000/ffffff",
-    "quantity": 34
-  }, {
-    "id": 8,
-    "name": "Bagel - Whole White Sesame",
-    "price": 91,
-    "image": "http://dummyimage.com/218x100.png/cc0000/ffffff",
-    "quantity": 40
-  }, {
-    "id": 9,
-    "name": "Carbonated Water - Peach",
-    "price": 43,
-    "image": "http://dummyimage.com/213x100.png/cc0000/ffffff",
-    "quantity": 39
-  }, {
-    "id": 10,
-    "name": "Oil - Sesame",
-    "price": 78,
-    "image": "http://dummyimage.com/111x100.png/cc0000/ffffff",
-    "quantity": 34
-  }, {
-    "id": 11,
-    "name": "Cookies - Fortune",
-    "price": 18,
-    "image": "http://dummyimage.com/237x100.png/dddddd/000000",
-    "quantity": 28
-  }, {
-    "id": 12,
-    "name": "Shichimi Togarashi Peppeers",
-    "price": 99,
-    "image": "http://dummyimage.com/230x100.png/dddddd/000000",
-    "quantity": 39
-  }, {
-    "id": 13,
-    "name": "Oil - Shortening,liqud, Fry",
-    "price": 91,
-    "image": "http://dummyimage.com/138x100.png/dddddd/000000",
-    "quantity": 18
-  }, {
-    "id": 14,
-    "name": "Cheese - Montery Jack",
-    "price": 24,
-    "image": "http://dummyimage.com/134x100.png/5fa2dd/ffffff",
-    "quantity": 22
-  }, {
-    "id": 15,
-    "name": "Cafe Royale",
-    "price": 43,
-    "image": "http://dummyimage.com/170x100.png/5fa2dd/ffffff",
-    "quantity": 30
-  }
-
-]);
  
- 
-//  function updateList(id,newName ,) {
-//   const pudatedList = List.map((List) => {
-//     if (id === List.id){
-//       return {...List,name : newName ,}
-//     }
-
-//   })
-//    return (
-//      <div>App</div>
-//    )
-//  }
- 
-//  export default App
-
-
-
-
-const addItem = (newItem) => {
-  setData([...data, newItem]);
-};
-
-const deleteItem = (id) => {
-  setData(data.filter(item => item.id !== id));
-};
-
-const updateItem = (id, newData) => {
-  setData(data.map(item => (item.id === id ? { ...item, ...newData } : item)));
-};
-
+  const initialData = [
+    {
+      "id": 1,
+      "first_name": "Evelin",
+      "last_name": "Adenet",
+      "email": "eadenet0@thetimes.co.uk",
+      "gender": "Male",
+      "fee_balance": 4274
+    }, {
+      "id": 2,
+      "first_name": "Cosme",
+      "last_name": "Vollam",
+      "email": "cvollam1@netvibes.com",
+      "gender": "Male",
+      "fee_balance": 2748
+    }, {
+      "id": 3,
+      "first_name": "Worthington",
+      "last_name": "McKiddin",
+      "email": "wmckiddin2@e-recht24.de",
+      "gender": "Male",
+      "fee_balance": 4578
+    }, {
+      "id": 4,
+      "first_name": "Noel",
+      "last_name": "Whybrow",
+      "email": "nwhybrow3@reuters.com",
+      "gender": "Male",
+      "fee_balance": 2315
+    }, {
+      "id": 5,
+      "first_name": "Danella",
+      "last_name": "Skehan",
+      "email": "dskehan4@cnn.com",
+      "gender": "Female",
+      "fee_balance": 2193
+    }, {
+      "id": 6,
+      "first_name": "Shanta",
+      "last_name": "Hentzeler",
+      "email": "shentzeler5@sakura.ne.jp",
+      "gender": "Female",
+      "fee_balance": 4290
+    }, {
+      "id": 7,
+      "first_name": "Scotti",
+      "last_name": "Pigeram",
+      "email": "spigeram6@vinaora.com",
+      "gender": "Male",
+      "fee_balance": 4191
+    }, {
+      "id": 8,
+      "first_name": "Ludovico",
+      "last_name": "Hurren",
+      "email": "lhurren7@dailymotion.com",
+      "gender": "Genderfluid",
+      "fee_balance": 4712
+    }, {
+      "id": 9,
+      "first_name": "Cale",
+      "last_name": "Kapelhoff",
+      "email": "ckapelhoff8@com.com",
+      "gender": "Male",
+      "fee_balance": 2498
+    }, {
+      "id": 10,
+      "first_name": "Stephi",
+      "last_name": "Kember",
+      "email": "skember9@unc.edu",
+      "gender": "Female",
+      "fee_balance": 748
+    }
+   ];
+   console.log(App)
+//  CURRENT STATE OF DATA
+   const [data, setData] = useState(initialData);
+  //  FUNCTION TO ADD ITEMS TO LIST
+   const addListItem = (newListItem) => {
+    setData([...data, {newListItem, id: data.length +1}]);
+  };
+  //  FUNCTION TO DELETE ITEM FROM LIST
+  const deleteListItem = (id) => {
+    setData(data.filter(ListItem => ListItem.id !== id));
+  };
+  // FUNCTION TO UPDATE ITEM IN LIST
+  const updateListItem = (id, newData) => {
+    setData(data.map(ListItem => (ListItem.id === id ? { ...ListItem, ...newData } : ListItem)));
+  };
 return (
+    
   <div className="App">
-    <List data={data} deleteItem={deleteItem} updateItem={updateItem} />
-  </div>
-);
+      <h1>User List</h1>
+      <List data={data} deleteListItem={deleteListItem} updateListItem={updateListItem} />
+      <button className="button"
+        onClick={() => addListItem({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
+        New User
+      </button>
+
+
+
+    </div>
+  )
 }
 
-export default App;
-
-// return (
-  // <div className="App">
-   /* const [data,setData] = useState([]) */
-   /* useState( ()=> {
-    fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
-      // setData(data)
-    // })eturn (
-  <div className="App">
-   {/* const [data,setData] = useState([]) */
-   /* useState( ()=> {
-    fetch('http://localhost:3000/People').then(res => res.json()).then(res.json => data)
-      // setData(data)
-    })
-    
-   })
-   return console.log('success'); */
+export default App
 
 
-
-
-  /* </div>
-);
-// } */
