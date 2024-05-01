@@ -1,7 +1,7 @@
 import React from 'react'
-// import {useState} from 'react';
+import './Item.css';
 
-function ListItem({ person, deletePerson, updatePerson }) {
+function Item({ person, deletePerson, updatePerson }) {
     return (
       <div className='container'>
         <p>{person.first_name} {person.last_name}</p>
@@ -19,4 +19,4 @@ function ListItem({ person, deletePerson, updatePerson }) {
   
 
 
-export default ListItem
+export default Item
