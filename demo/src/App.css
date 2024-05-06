@@ -1,6 +1,6 @@
 h1{
-  background-color: blue;
-  color: white;
+  background-color: yellow;
+  color:black;
 }
 .App {
   text-align: center;
@@ -9,7 +9,7 @@ h1{
 }
 .button{
   color:white;
-    background-color: blue;
+    background-color: green;
     font-size: 20px;
 }
 
