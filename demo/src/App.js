@@ -6,7 +6,7 @@ import React from 'react'
 
 function App() {
  
-  const initialData = [
+  const originalData = [
     {
       "id": 1,
       "first_name": "Evelin",
@@ -81,13 +81,13 @@ function App() {
    ];
    console.log(App)
    // CURRENT STATE OF DATA
-   const [data, setData] = useState(initialData);
+   const [data, setData] = useState(originalData);
    //FUNCTION TO DELETE PERSON ACCORDING TO ID
-   const deletePerson = (id) => {
+   const removePerson = (id) => {
      setData(data.filter(person => person.id !== id));
    };
    // FUNCTION TO ADD PERSON TO LIST 
-   const addPerson = (newPerson) => {
+   const createPerson = (newPerson) => {
      //DETAILS OF NEW PERSON
      setData([...data, { ...newPerson, id: data.length + 1 }]);
    };
@@ -100,9 +100,9 @@ return (
   <div className="App">
       <h1>PEOPLE </h1>
       
-      <List data={data} deletePerson={deletePerson} updatePerson={updatePerson} />
+      <List data={data} removePerson={removePerson} updatePerson={updatePerson} />
       <button className="button"
-        onClick={() => addPerson({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
+        onClick={() => createPerson({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
         New User
       </button>
 

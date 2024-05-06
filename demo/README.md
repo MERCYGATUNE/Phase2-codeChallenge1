@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+## PHASE-2 CODE-CHALLENGE1
+
+## Date 2024/04/30
+
+## By MERCY GATUNE
+
+## DESCRIPTION
+The program renders a list of people from a database .The program allows a user to delete a person from a list and increase the fee of a person on the list.
+
+## INSTALLATION
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +79,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Live Link
+
