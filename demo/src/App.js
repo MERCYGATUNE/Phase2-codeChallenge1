@@ -101,7 +101,7 @@ return (
       <h1>PEOPLE </h1>
       
       <List data={data} removePerson={removePerson} updatePerson={updatePerson} />
-      <button className="button"
+      <button className="new-user"
         onClick={() => createPerson({ first_name: "New", last_name: "User", email: "newuser@gmail.com", gender: "Male/Female/...", fee_balance: 2000 })}>
         New User
       </button>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Item.css';
 
-function Item({ person, removePerson, updatePerson }) {
+function Item({ person, removePerson, updatePerson,createPerson }) {
     return (
       <div className='container'>
         <p>{person.first_name} {person.last_name}</p>
@@ -12,6 +12,8 @@ function Item({ person, removePerson, updatePerson }) {
           onClick={() => removePerson(person.id)}>Delete</button>
         <button className="button"
           onClick={() => updatePerson(person.id, { fee_balance: person.fee_balance + 300 })}>INCREASE FEE!</button>
+
+
       </div>
     );
   };
